@@ -66,6 +66,7 @@ module JekyllAdmin
     # of data file metadata
     def to_liquid
       @to_liquid ||= METHODS_FOR_LIQUID.map { |key| [key, public_send(key)] }.to_h
+      @to_liquid.merge!("data_dir" => self.class.data_dir)
     end
 
     def self.all

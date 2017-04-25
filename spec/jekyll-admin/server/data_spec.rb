@@ -8,6 +8,7 @@ describe "data" do
       "slug"          => "data_file",
       "ext"           => ".yml",
       "title"         => "Data File",
+      "data_dir"      => "_data",
       "api_url"       => "http://localhost:4000/_api/data/data_file.yml",
       "http_url"      => nil,
     }
@@ -53,6 +54,7 @@ describe "data" do
       "slug"          => "actors",
       "ext"           => ".yml",
       "title"         => "Actors",
+      "data_dir"      => "_data",
       "api_url"       => "http://localhost:4000/_api/data/movies/actors.yml",
       "http_url"      => nil,
     }
@@ -70,6 +72,7 @@ describe "data" do
       "slug"          => "actors",
       "ext"           => ".yml",
       "title"         => "Actors",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -91,6 +94,7 @@ describe "data" do
       "slug"          => "actors",
       "ext"           => ".yml",
       "title"         => "Actors",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -112,6 +116,7 @@ describe "data" do
       "slug"          => "data-file-new",
       "ext"           => ".yml",
       "title"         => "Data File New",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -139,6 +144,7 @@ describe "data" do
       "slug"          => "data-file-new",
       "ext"           => ".yml",
       "title"         => "Data File New",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -166,6 +172,7 @@ describe "data" do
       "slug"          => "data-file-new",
       "ext"           => ".yml",
       "title"         => "Data File New",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -193,6 +200,7 @@ describe "data" do
       "slug"          => "data-file-new",
       "ext"           => ".yml",
       "title"         => "Data File New",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar\n",
       "content"       => {
         "foo" => "bar",
@@ -220,6 +228,7 @@ describe "data" do
       "slug"          => "data-file-update",
       "ext"           => ".yml",
       "title"         => "Data File Update",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar2\n",
       "content"       => {
         "foo" => "bar2",
@@ -247,6 +256,7 @@ describe "data" do
       "slug"          => "data-file-update",
       "ext"           => ".yml",
       "title"         => "Data File Update",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar2\n",
       "content"       => {
         "foo" => "bar2",
@@ -275,6 +285,7 @@ describe "data" do
       "slug"          => "data-file-renamed",
       "ext"           => ".yml",
       "title"         => "Data File Renamed",
+      "data_dir"      => "_data",
       "raw_content"   => "foo: bar2\n",
       "content"       => {
         "foo" => "bar2",

@@ -46,6 +46,7 @@ describe JekyllAdmin::DataFile do
           "slug"          => "data_file",
           "ext"           => ".yml",
           "title"         => "Data File",
+          "data_dir"      => "_data",
           "api_url"       => "http://localhost:4000/_api/data/data_file.yml",
           "http_url"      => nil,
         })
@@ -58,6 +59,7 @@ describe JekyllAdmin::DataFile do
           "slug"          => "data_file",
           "ext"           => ".yml",
           "title"         => "Data File",
+          "data_dir"      => "_data",
           "raw_content"   => "foo: bar\n",
           "content"       => {
             "foo" => "bar",
