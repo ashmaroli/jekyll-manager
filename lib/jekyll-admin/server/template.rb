@@ -103,6 +103,7 @@ module JekyllAdmin
 
       def write_front_matter?
         return false unless request_payload["front_matter"]
+
         true
       end
 

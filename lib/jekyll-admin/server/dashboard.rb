@@ -2,9 +2,9 @@ module JekyllAdmin
   class Server < Sinatra::Base
     namespace "/dashboard" do
       get do
-        json app_meta.merge!({
-          "site" => dashboard_site_payload,
-        })
+        json app_meta.merge!(
+          "site" => dashboard_site_payload
+        )
       end
 
       private

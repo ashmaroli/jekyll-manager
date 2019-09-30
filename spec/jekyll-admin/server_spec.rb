@@ -22,7 +22,7 @@ describe JekyllAdmin::Server do
   end
 
   it "responds to CORS preflight checks" do
-    options "/", {}, { "HTTP_ORIGIN" => "http://localhost:3000" }
+    options "/", {}, "HTTP_ORIGIN" => "http://localhost:3000"
     expect(last_response.status).to eql(204)
 
     expected = {

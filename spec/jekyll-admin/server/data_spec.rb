@@ -14,12 +14,12 @@ describe "data" do
   end
 
   let(:response_with_content) do
-    base_response.merge({
+    base_response.merge(
       "raw_content" => "foo: bar\n",
       "content"     => {
         "foo" => "bar",
-      },
-    })
+      }
+    )
   end
 
   def app

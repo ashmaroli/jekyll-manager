@@ -3,7 +3,7 @@ module JekyllAdmin
     namespace "/theme" do
       get do
         ensure_theme
-        json({
+        json(
           :name        => theme.name,
           :version     => theme.version,
           :authors     => theme.authors.join(", "),
@@ -11,43 +11,43 @@ module JekyllAdmin
           :summary     => theme.summary,
           :description => theme.description,
           :path        => at_root,
-          :directories => entries.map(&:to_api),
-        })
+          :directories => entries.map(&:to_api)
+        )
       end
 
       get "/*?/?:path.:ext" do
         ensure_requested_file
-        json({
+        json(
           :name            => filename,
           :path            => file_path,
           :relative_path   => relative_path_of(file_path),
           :raw_content     => raw_content,
           :exist_at_source => exist_at_source?,
           :http_url        => http_url(file_path),
-          :api_url         => url,
-        })
+          :api_url         => url
+        )
       end
 
       get "/?*" do
         ensure_directory_in_theme
-        json({
+        json(
           :name    => splats.first.split("/").last || theme.name,
           :path    => at_root(splats.first),
-          :entries => entries.map(&:to_api).concat(subdir_entries),
-        })
+          :entries => entries.map(&:to_api).concat(subdir_entries)
+        )
       end
 
       put "/*?/?:path.:ext" do
         write_file write_path, raw_content
-        json({
+        json(
           :name            => filename,
           :path            => write_path,
           :relative_path   => relative_path_of(file_path),
           :raw_content     => raw_content,
           :exist_at_source => true,
           :http_url        => http_url(file_path),
-          :api_url         => url,
-        })
+          :api_url         => url
+        )
       end
 
       private
