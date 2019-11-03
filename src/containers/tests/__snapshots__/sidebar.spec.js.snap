@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Containers::Sidebar should render correctly 1`] = `
+<div
+  className="sidebar"
+>
+  <a
+    className="logo"
+    onClick={[Function]}
+    style={Object {}}
+  />
+  <ul
+    className="routes"
+  >
+    <div
+      className="route-section"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-file-text"
+          />
+          Pages
+        </a>
+      </li>
+    </div>
+    <div
+      className="route-section"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-edit"
+          />
+          Drafts
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-book"
+          />
+          Posts
+        </a>
+      </li>
+    </div>
+    <div
+      className="route-section"
+    >
+      <li
+        className="accordion-label collapsed"
+        style={
+          Object {
+            "maxHeight": 47,
+          }
+        }
+      >
+        <a
+          onClick={[Function]}
+        >
+          <i
+            className="fa fa-briefcase"
+          />
+          Collections
+          <div
+            className="counter"
+          >
+            1
+          </div>
+          <div
+            className="chevrons"
+          >
+            <i
+              className="fa fa-chevron-up"
+            />
+          </div>
+        </a>
+        <ul>
+          <li>
+            <a
+              onClick={[Function]}
+              style={Object {}}
+            >
+              <i
+                className="fa fa-book"
+              />
+              Puppies
+            </a>
+          </li>
+        </ul>
+      </li>
+    </div>
+    <div
+      className="route-section"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-database"
+          />
+          Data files
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-file"
+          />
+          Static files
+        </a>
+      </li>
+    </div>
+    <div
+      className="route-section"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-clone"
+          />
+          Templates
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-diamond"
+          />
+          Theme gem
+        </a>
+      </li>
+    </div>
+    <div
+      className="route-section"
+    >
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <i
+            className="fa fa-cog"
+          />
+          Configuration
+        </a>
+      </li>
+    </div>
+  </ul>
+</div>
+`;
