@@ -50,7 +50,7 @@ module JekyllAdmin
       end
 
       def site_docs
-        site.collections.map { |c| [c[0], c[1].filtered_entries] }.to_h
+        site.collections.map { |c| [c[0], c[1].filtered_entries.sort] }.to_h
       end
 
       def paths_to_drafts
