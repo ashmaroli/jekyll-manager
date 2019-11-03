@@ -6,12 +6,17 @@ environment:
   matrix:
     - TEST_SUITE: node
     - TEST_SUITE: ruby
+      JEKYLL_VERSION: "~> 3.8"
+    - TEST_SUITE: ruby
+      JEKYLL_VERSION: "~> 4.0"
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - ps: Install-Product node $env:nodejs_version
+  - gem update --system --no-document
   - bundle config --local path vendor/bundle
-  - sh script/bootstrap
+  - bundle install
+  - npm install
 
 build: off
 
