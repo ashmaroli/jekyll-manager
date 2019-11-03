@@ -24,23 +24,25 @@ module JekyllAdmin
         }
       end
 
+      # rubocop:disable Metrics/AbcSize
       def dashboard_site_payload
         {
           "health"          => site_health,
-          "layouts"         => layout_names,
-          "tags"            => site.tags.keys,
+          "layouts"         => site.layouts.keys.sort,
+          "tags"            => site.tags.keys.sort,
           "content_pages"   => to_html_pages,
-          "data_files"      => DataFile.all.map(&:relative_path),
-          "static_files"    => site.static_files.map(&:relative_path),
-          "collections"     => site.collection_names,
-          "drafts"          => paths_to_drafts,
-          "collection_docs" => collection_documents.flatten,
-          "templates"       => presentational_files.flatten,
+          "data_files"      => DataFile.all.map(&:relative_path).sort,
+          "static_files"    => site.static_files.map(&:relative_path).sort,
+          "collections"     => site.collection_names.sort,
+          "drafts"          => paths_to_drafts.sort,
+          "collection_docs" => collection_documents.flatten.sort,
+          "templates"       => presentational_files.flatten.sort,
         }.merge! site_docs
       end
+      # rubocop:enable Metrics/AbcSize
 
       def to_html_pages
-        site.pages.select(&:html?).map!(&:path)
+        site.pages.select(&:html?).map!(&:path).sort
       end
 
       def collection_documents
@@ -56,10 +58,6 @@ module JekyllAdmin
       def paths_to_drafts
         site.posts.docs.select { |post| post.output_ext == ".html" && post.draft? }
           .map! { |post| post.relative_path.sub("_drafts/", "") }
-      end
-
-      def layout_names
-        site.layouts.keys
       end
 
       def presentational_files

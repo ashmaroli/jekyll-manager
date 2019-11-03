@@ -19,14 +19,14 @@ describe "dashboard" do
         "more posts/some more posts/2016-05-01-a-test-post-within-subdirectory.md",
         "more posts/some more posts/2016-05-02-another-test-post-within-subdirectory.md",
         "test/2016-01-02-test2.md",
-      ]
+      ].sort
     )
     expect(last_response_parsed["site"]["content_pages"]).to eql(
       [
         "page.md",
         "page-dir/page1.md",
         "page-dir/test/page2.md",
-      ]
+      ].sort
     )
     expect(last_response_parsed["site"]["data_files"]).to eql(
       [
@@ -36,7 +36,7 @@ describe "dashboard" do
         "movies/genres/fiction.yml",
         "settings.json",
         "members.csv",
-      ]
+      ].sort
     )
     expect(last_response_parsed["site"]["static_files"]).to eql(
       [
@@ -47,14 +47,14 @@ describe "dashboard" do
         "/index.html",
         "/static-file.txt",
         "/assets/images/icon-dark.png",
-      ]
+      ].sort
     )
     expect(last_response_parsed["site"]["drafts"]).to eql(
       [
         "draft-dir/WIP/yet-another-draft-post.md",
         "draft-dir/another-draft-post.md",
         "draft-post.md",
-      ]
+      ].sort
     )
     expect(last_response_parsed["site"]["collections"]).to eql(%w(posts puppies))
   end
