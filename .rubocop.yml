@@ -1,6 +1,6 @@
 require: rubocop-jekyll
 inherit_gem:
-  rubocop-jekyll: .rubocop.yml
+  rubocop-jekyll: '.rubocop.yml'
 
 AllCops:
   Exclude:
@@ -8,19 +8,6 @@ AllCops:
     - src/**/*
     - node_modules/**/*
     - vendor/**/*
-Metrics/AbcSize:
-  Max: 22
+
 Metrics/BlockLength:
-  Enabled: false
-Metrics/CyclomaticComplexity:
-  Max: 8
-Metrics/MethodLength:
-  Max: 21
-Metrics/PerceivedComplexity:
-  Max: 9
-Naming/UncommunicativeMethodParamName:
-  AllowedNames:
-    - io
-    - id
-Style/FrozenStringLiteralComment:
   Enabled: false

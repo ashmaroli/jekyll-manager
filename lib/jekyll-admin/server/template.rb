@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllAdmin
   class Server < Sinatra::Base
     namespace "/templates" do
@@ -132,11 +134,12 @@ module JekyllAdmin
       end
 
       def page_body
-        body = if payload_front_matter && !payload_front_matter.empty?
-                 YAML.dump(payload_front_matter).strip
-               else
-                 "---"
-               end
+        body = +""
+        body << if payload_front_matter && !payload_front_matter.empty?
+                  YAML.dump(payload_front_matter).strip
+                else
+                  "---"
+                end
         body << "\n---\n\n"
         body << request_payload["raw_content"].to_s
         body << "\n"

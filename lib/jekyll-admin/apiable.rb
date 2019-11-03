@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllAdmin
   # Abstract module to be included in Convertible and Document to provide
   # additional, API-specific functionality without duplicating logic
@@ -18,8 +20,9 @@ module JekyllAdmin
     # include_content - if true, includes the content in the respond, false by default
     #                   to support mapping on indexes where we only want metadata
     #
-    #
     # Returns a hash (which can then be to_json'd)
+    #
+    # rubocop:disable Metrics/AbcSize
     def to_api(include_content: false)
       output = hash_for_api
       output = output.merge(url_fields)
@@ -52,6 +55,7 @@ module JekyllAdmin
 
       output
     end
+    # rubocop:enable Metrics/AbcSize
 
     private
 

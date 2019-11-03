@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllAdmin
   class Server < Sinatra::Base
     namespace "/dashboard" do
@@ -57,7 +59,7 @@ module JekyllAdmin
       end
 
       def layout_names
-        site.layouts.map { |l| l[0] }
+        site.layouts.keys
       end
 
       def presentational_files
