@@ -23,7 +23,7 @@ describe "custom integration" do
   let(:response) { Net::HTTP.get_response(uri) }
 
   before do
-    Jekyll::Utils::Exec.run(*start_command)
+    Open3.popen3(*start_command)
     sleep 3
   end
 
