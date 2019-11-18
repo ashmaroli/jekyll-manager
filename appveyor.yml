@@ -1,22 +1,18 @@
 environment:
-  nodejs_version: "6"
+  nodejs_version: 8
   RACK_ENV: test
   JEKYLL_LOG_LEVEL: warn
   RUBY_VERSION: 24
   matrix:
     - TEST_SUITE: node
     - TEST_SUITE: ruby
-      JEKYLL_VERSION: "~> 3.8"
-    - TEST_SUITE: ruby
-      JEKYLL_VERSION: "~> 4.0"
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - ps: Install-Product node $env:nodejs_version
   - gem update --system --no-document
   - bundle config --local path vendor/bundle
-  - bundle install
-  - npm install
+  - sh script/bootstrap
 
 build: off
 
@@ -36,7 +32,7 @@ test_script:
 
 cache:
   - vendor/bundle
-  - node_modules
+  - 'node_modules -> package.json' # invalidate cache if package.json changes
 
 init:
   - git config --global core.autocrlf true

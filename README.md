@@ -1,6 +1,6 @@
 [![Gem Version](https://img.shields.io/gem/v/jekyll-manager.svg)](https://rubygems.org/gems/jekyll-manager)
 [![Build Status](https://travis-ci.org/ashmaroli/jekyll-manager.svg?branch=master)](https://travis-ci.org/ashmaroli/jekyll-manager)
-[![Build status](https://ci.appveyor.com/api/projects/status/biop1r6ae524xlm2/branch/master?svg=true)](https://ci.appveyor.com/project/ashmaroli/jekyll-manager/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/03eflgat9fh8mxml/branch/master?svg=true)](https://ci.appveyor.com/project/ashmaroli/jekyll-manager/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/ashmaroli/jekyll-manager/badge.svg?branch=master)](https://coveralls.io/github/ashmaroli/jekyll-manager?branch=master)
 [![NPM Dependencies](https://david-dm.org/ashmaroli/jekyll-manager.svg)](https://david-dm.org/ashmaroli/jekyll-manager)
 

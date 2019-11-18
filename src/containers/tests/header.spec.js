@@ -1,14 +1,16 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { Header } from '../Header';
 import { config } from './fixtures';
 
 const defaultProps = {
-  admin: {},
+  admin: { version: '0.1.0' },
   config: config
 };
 
-function setup(props = defaultProps) {
+function setup(props) {
   const component = mount(
     <Header {...props} />
   );
@@ -16,29 +18,30 @@ function setup(props = defaultProps) {
   return {
     component: component,
     title: component.find('h3 span'),
-    version: component.find('.version')
   };
 }
 
 describe('Containers::Header', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Header {...defaultProps} />, div);
+  });
+
   it('should render correctly', () => {
-    const { component, title } = setup();
+    const { component, title } = setup(defaultProps);
     const { config } = component.props();
     expect(title.text()).toEqual(config.title);
+
+    const tree = renderer.create(<Header {...defaultProps} />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   it('should render placeholder title', () => {
-    const { component, title } = setup(Object.assign({}, defaultProps, {
-      config: {}
-    }));
-    const { config } = component.props();
+    const props = { ...defaultProps, config: {} };
+    const { component, title } = setup(props);
     expect(title.text()).toEqual('You have no title!');
-  });
 
-  it('should render app version', () => {
-    const { component, version } = setup(Object.assign({}, defaultProps, {
-      admin: { version: '0.1.0' }
-    }));
-    expect(version.text()).toEqual('0.1.0');
+    const tree = renderer.create(<Header {...props} />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
