@@ -154,6 +154,7 @@ DocumentNew.propTypes = {
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
+  currentDocument: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
 

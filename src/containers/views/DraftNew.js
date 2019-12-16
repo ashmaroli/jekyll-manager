@@ -144,6 +144,7 @@ DraftNew.propTypes = {
   route: PropTypes.object.isRequired,
   params: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
+  draft: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
 

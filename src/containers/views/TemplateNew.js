@@ -164,6 +164,7 @@ TemplateNew.propTypes = {
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
   params: PropTypes.object.isRequired,
+  template: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
 

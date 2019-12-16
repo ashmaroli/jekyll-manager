@@ -12,8 +12,8 @@ import config from '../webpack.config.dev';
 import { ADMIN_PREFIX } from '../src/constants';
 
 const bundler = webpack(config);
-const defaultFile = "index.html";
-const folder = path.resolve(__dirname, "../");
+const defaultFile = 'index.html';
+const folder = path.resolve(__dirname, '../');
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -32,8 +32,12 @@ browserSync({
           hash: false,
           timings: false,
           chunks: false,
-          chunkModules: false
-        }
+          builtAt: false,
+          modules: false,
+          children: false,
+          entrypoints: false,
+          chunkModules: false,
+        },
       }),
 
       webpackHotMiddleware(bundler),
@@ -41,19 +45,17 @@ browserSync({
       // history fallback
       (req, res, next) => {
         let fileName = url.parse(req.url);
-        fileName = fileName.href.split(fileName.search).join("");
+        fileName = fileName.href.split(fileName.search).join('');
         let fileExists = fs.existsSync(folder + fileName);
-        if (!fileExists && fileName.indexOf("browser-sync-client") < 0) {
-            req.url = "/" + defaultFile;
+        if (!fileExists && fileName.indexOf('browser-sync-client') < 0) {
+          req.url = '/' + defaultFile;
         }
         return next();
-      }
-    ]
+      },
+    ],
   },
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
-  files: [
-    'src/*.html'
-  ]
+  files: ['src/*.html'],
 });
