@@ -8,7 +8,7 @@ import DocumentTitle from 'react-document-title';
 
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Button from '../../components/Button';
-import { fetchTemplates } from '../../actions/templates';
+import { fetchTemplates } from '../../ducks/templates';
 import { generateTitle } from '../../utils/helpers';
 import { ADMIN_PREFIX } from '../../constants';
 

@@ -9,10 +9,9 @@ import DocumentTitle from 'react-document-title';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Button from '../../components/Button';
 import InputSearch from '../../components/form/InputSearch';
-import { fetchPages, deletePage } from '../../actions/pages';
-import { search } from '../../actions/utils';
+import { fetchPages, deletePage, filterBySearchInput } from '../../ducks/pages';
+import { search } from '../../ducks/utils';
 import { generateTitle } from '../../utils/helpers';
-import { filterBySearchInput } from '../../reducers/pages';
 import { getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
 import { ADMIN_PREFIX } from '../../constants';
 

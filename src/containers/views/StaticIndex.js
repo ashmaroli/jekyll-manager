@@ -10,11 +10,10 @@ import FilePreview from '../../components/FilePreview';
 import Button from '../../components/Button';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import InputSearch from '../../components/form/InputSearch';
-import { search } from '../../actions/utils';
+import { search } from '../../ducks/utils';
+import { filterByFilename, fetchStaticFiles } from '../../ducks/staticfiles';
 import { existingUploadedFilenames, generateTitle } from '../../utils/helpers';
-import { filterByFilename } from '../../reducers/staticfiles';
 import { getOverrideMessage } from '../../constants/lang';
-import { fetchStaticFiles } from '../../actions/staticfiles';
 import { ADMIN_PREFIX } from '../../constants';
 
 export class StaticIndex extends Component {

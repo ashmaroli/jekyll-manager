@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import _ from 'underscore';
 import DocumentTitle from 'react-document-title';
 
-import { fetchTheme } from '../../actions/theme';
+import { fetchTheme } from '../../ducks/theme';
 import { generateTitle } from '../../utils/helpers';
 import Button from '../../components/Button';
 import Collapsible from '../../components/Collapsible';

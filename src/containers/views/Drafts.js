@@ -9,10 +9,10 @@ import DocumentTitle from 'react-document-title';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Button from '../../components/Button';
 import InputSearch from '../../components/form/InputSearch';
-import { fetchDrafts, deleteDraft } from '../../actions/drafts';
-import { search } from '../../actions/utils';
+import { fetchDrafts, deleteDraft , filterBySearchInput } from '../../ducks/drafts';
+import { search } from '../../ducks/utils';
 import { generateTitle } from '../../utils/helpers';
-import { filterBySearchInput } from '../../reducers/drafts';
+
 import { getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
 import { ADMIN_PREFIX } from '../../constants';
 

@@ -6,7 +6,7 @@ import _ from 'underscore';
 import classnames from 'classnames';
 import DocumentTitle from 'react-document-title';
 
-import { fetchMeta } from '../../actions/dashboard';
+import { fetchMeta } from '../../ducks/dashboard';
 import Gauge from '../../components/dashboard/Gauge';
 import GaugeBoard from '../../components/dashboard/GaugeBoard';
 import { generateTitle } from '../../utils/helpers';

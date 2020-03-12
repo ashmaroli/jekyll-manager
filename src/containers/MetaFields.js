@@ -7,9 +7,9 @@ import _ from 'underscore';
 import MetaField from '../components/metadata/MetaField';
 import {
   storeContentFields, addField, removeField, updateFieldKey, updateFieldValue,
-  moveArrayItem, convertField
-} from '../actions/metadata';
-import { fetchMeta } from '../actions/dashboard';
+  moveArrayItem, convertField,
+} from '../ducks/metadata';
+import { fetchMeta } from '../ducks/dashboard';
 
 export class MetaFields extends Component {
 

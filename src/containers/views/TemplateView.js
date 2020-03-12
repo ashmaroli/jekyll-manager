@@ -9,7 +9,7 @@ import DocumentTitle from 'react-document-title';
 import Button from '../../components/Button';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Editor from '../../components/Editor';
-import { fetchThemeItem, putThemeItem } from '../../actions/theme';
+import { fetchThemeItem, putThemeItem } from '../../ducks/theme';
 import { getExtensionFromPath, generateTitle } from '../../utils/helpers';
 import { ADMIN_PREFIX } from '../../constants';
 

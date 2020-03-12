@@ -2,7 +2,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
-import rootReducer from '../reducers';
+import rootReducer from '../ducks';
 
 const logger = createLogger();
 
@@ -23,8 +23,8 @@ const configureStoreDev = (initialState) => {
   );
 
   if (module.hot) {
-    module.hot.accept('../reducers', () => {
-      const nextReducer = require('../reducers').default;
+    module.hot.accept('../ducks', () => {
+      const nextReducer = require('../ducks').default;
       store.replaceReducer(nextReducer);
     });
   }

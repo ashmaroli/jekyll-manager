@@ -14,9 +14,9 @@ import Splitter from '../../components/Splitter';
 import Errors from '../../components/Errors';
 import Editor from '../../components/Editor';
 import Button from '../../components/Button';
-import { clearErrors } from '../../actions/utils';
+import { clearErrors } from '../../ducks/utils';
 import { getFilenameFromPath, getExtensionFromPath, preventDefault, generateTitle } from '../../utils/helpers';
-import { fetchDataFile, putDataFile, deleteDataFile, onDataFileChanged } from '../../actions/datafiles';
+import { fetchDataFile, putDataFile, deleteDataFile, onDataFileChanged } from '../../ducks/datafiles';
 import { getLeaveMessage, getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
 import { ADMIN_PREFIX } from '../../constants';
 

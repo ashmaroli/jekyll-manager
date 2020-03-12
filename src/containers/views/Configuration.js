@@ -10,8 +10,8 @@ import DataGUI from '../MetaFields';
 import Editor from '../../components/Editor';
 import Errors from '../../components/Errors';
 import Button from '../../components/Button';
-import { putConfig, onEditorChange } from '../../actions/config';
-import { clearErrors } from '../../actions/utils';
+import { putConfig, onEditorChange } from '../../ducks/config';
+import { clearErrors } from '../../ducks/utils';
 import { getLeaveMessage } from '../../constants/lang';
 import { preventDefault, generateTitle } from '../../utils/helpers';
 

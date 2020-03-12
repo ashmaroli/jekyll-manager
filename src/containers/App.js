@@ -5,8 +5,8 @@ import { bindActionCreators } from 'redux';
 import { HotKeys } from 'react-hotkeys';
 import DocumentTitle from 'react-document-title';
 
-import { fetchConfig } from '../actions/config';
-import { fetchMeta } from '../actions/dashboard';
+import { fetchConfig } from '../ducks/config';
+import { fetchMeta } from '../ducks/dashboard';
 import keyboardShortcuts from '../constants/keyboardShortcuts';
 
 // Components

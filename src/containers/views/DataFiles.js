@@ -10,9 +10,8 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
 import InputSearch from '../../components/form/InputSearch';
 import Button from '../../components/Button';
-import { fetchDataFiles, deleteDataFile } from '../../actions/datafiles';
-import { search } from '../../actions/utils';
-import { filterByFilename } from '../../reducers/datafiles';
+import { fetchDataFiles, deleteDataFile, filterByFilename } from '../../ducks/datafiles';
+import { search } from '../../ducks/utils';
 import { getFilenameFromPath, generateTitle } from '../../utils/helpers';
 import { ADMIN_PREFIX } from '../../constants';
 
