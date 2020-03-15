@@ -19,7 +19,7 @@ function setup(defaultProps = props) {
   );
 
   return {
-    component: component,
+    component,
     input: component.find('textarea'),
     actions
   };

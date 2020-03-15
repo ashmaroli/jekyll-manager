@@ -19,7 +19,7 @@ function setup(props) {
   const component = mount(<Sidebar {...props} />);
 
   return {
-    component: component,
+    component,
     links: component.find('.routes').find('li')
   };
 }

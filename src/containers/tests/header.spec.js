@@ -7,7 +7,7 @@ import { config } from './fixtures';
 
 const defaultProps = {
   admin: { version: '0.1.0' },
-  config: config
+  config
 };
 
 function setup(props) {
@@ -16,7 +16,7 @@ function setup(props) {
   );
 
   return {
-    component: component,
+    component,
     title: component.find('h3 span'),
   };
 }

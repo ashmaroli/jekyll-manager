@@ -21,8 +21,8 @@ function setup(pages=[page]) {
   );
 
   return {
-    component: component,
-    actions: actions,
+    component,
+    actions,
     h1: component.find('h1').last(),
     table: component.find('.content-table')
   };

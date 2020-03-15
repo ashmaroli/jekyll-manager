@@ -22,8 +22,8 @@ function setup(datafiles=[datafile]) {
   );
 
   return {
-    component: component,
-    actions: actions,
+    component,
+    actions,
     h1: component.find('h1').last(),
     table: component.find('.content-table'),
     deleteButton: component.find(Button).last()

@@ -7,7 +7,7 @@ import Button from '../../../components/Button';
 import { datafile } from './fixtures';
 
 const defaultProps = {
-  datafile: datafile,
+  datafile,
   updated: false,
   datafileChanged: false,
   fieldChanged: false,
@@ -124,7 +124,7 @@ describe('Containers::DataFileEdit', () => {
 
   it('should call putDataFile after fieldChanged in GUI mode', () => {
     const { component, toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
-      datafile: datafile,
+      datafile,
       params: { splat: ['books', 'authors', 'yml']},
       fieldChanged: true
     }));

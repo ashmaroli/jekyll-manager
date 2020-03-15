@@ -113,7 +113,7 @@ export const putDocument = (mode, collection, directory, filename = '') => (
 
     payload = {
       published: true,
-      draft_path: draft_path,
+      draft_path,
       path: relative_path,
       front_matter,
       raw_content,

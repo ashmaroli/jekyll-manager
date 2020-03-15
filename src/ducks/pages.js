@@ -71,7 +71,7 @@ export const putPage = (mode, directory, filename = '') => (
     filename = path;
     payload = { front_matter, raw_content };
   } else {
-    payload = { path: path, front_matter, raw_content };
+    payload = { path, front_matter, raw_content };
   }
 
   //send the put request

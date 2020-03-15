@@ -21,7 +21,7 @@ describe('Actions::Theme', () => {
 
     const expectedActions = [
       { type: themeDuck.FETCH_THEME_REQUEST },
-      { type: themeDuck.FETCH_THEME_SUCCESS, theme: theme },
+      { type: themeDuck.FETCH_THEME_SUCCESS, theme },
     ];
 
     const store = mockStore({ theme: {} });
@@ -75,7 +75,7 @@ describe('Actions::Theme', () => {
 
     const expectedActions = [
       { type: themeDuck.FETCH_THEME_ITEM_REQUEST },
-      { type: themeDuck.FETCH_THEME_ITEM_SUCCESS, template: template },
+      { type: themeDuck.FETCH_THEME_ITEM_SUCCESS, template },
     ];
 
     const store = mockStore({ template: {} });

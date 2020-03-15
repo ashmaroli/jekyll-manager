@@ -25,7 +25,7 @@ function setup(props = defaultProps) {
   return {
     component,
     editor: component.find('.editor'),
-    actions: actions
+    actions
   };
 }
 
@@ -43,7 +43,7 @@ describe('Components::Editor', () => {
     };
     _.each(_.keys(types), type => {
       const { editor } = setup(Object.assign({}, defaultProps, {
-        type: type
+        type
       }));
       expect(editor.prop('mode')).toEqual(types[type]);
     });

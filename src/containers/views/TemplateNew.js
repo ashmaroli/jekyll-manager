@@ -67,7 +67,7 @@ export class TemplateNew extends Component {
 
   getExtension(e) {
     const ext = getExtensionFromPath(e.target.value);
-    this.setState({ ext: ext });
+    this.setState({ ext });
   }
 
   handleToggle(e) {

@@ -122,7 +122,7 @@ export class PageEdit extends Component {
 
     const inputPath = <InputPath onChange={updatePath} type="pages" path={path} />;
     const metafields = (
-      <Metadata ref="frontmatter" fields={{ layout, title, raw_content, path: path, ...front_matter }} />
+      <Metadata ref="frontmatter" fields={{ layout, title, raw_content, path, ...front_matter }} />
     );
 
     return (

@@ -33,7 +33,7 @@ function setup(props=defaultProps) {
     addFieldButton: component.find('.meta-new a'),
     addDataFieldButton: component.find('.data-new a'),
     metafields: component.find(MetaField),
-    actions: actions
+    actions
   };
 }
 

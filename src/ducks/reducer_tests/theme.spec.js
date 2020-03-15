@@ -29,11 +29,11 @@ describe('Reducers::Theme', () => {
         { theme },
         {
           type: themeDuck.FETCH_THEME_SUCCESS,
-          theme: theme,
+          theme,
         }
       )
     ).toEqual({
-      theme: theme,
+      theme,
       isFetching: false,
     });
     expect(

@@ -15,7 +15,7 @@ const defaultProps = {
   isFetching: false,
   router: {},
   route: {},
-  config: config,
+  config,
   params: { collection_name: "movies", splat: [null, "inception", "md"] }
 };
 

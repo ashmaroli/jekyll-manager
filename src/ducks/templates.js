@@ -76,9 +76,9 @@ export const putTemplate = (
     }
   } else {
     if (include_front_matter == false) {
-      payload = { path: path, raw_content };
+      payload = { path, raw_content };
     } else {
-      payload = { path: path, front_matter, raw_content };
+      payload = { path, front_matter, raw_content };
     }
   }
 

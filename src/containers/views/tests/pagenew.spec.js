@@ -14,7 +14,7 @@ const defaultProps = {
   updated: false,
   router: {},
   route: {},
-  config: config,
+  config,
   params: { splat: 'page-dir' }
 };
 

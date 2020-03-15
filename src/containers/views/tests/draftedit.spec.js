@@ -7,7 +7,7 @@ import { DraftEdit } from '../DraftEdit';
 import { draft } from './fixtures';
 
 const defaultProps = {
-  draft: draft,
+  draft,
   errors: [],
   fieldChanged: false,
   updated: false,

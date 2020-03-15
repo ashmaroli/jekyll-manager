@@ -22,7 +22,7 @@ function setup(file=staticfile) {
     div: component.find('.file-preview a div'),
     indicator: component.find('.file-preview .theme-indicator'),
     delete_btn: component.find('.file-preview .delete'),
-    actions: actions
+    actions
   };
 }
 

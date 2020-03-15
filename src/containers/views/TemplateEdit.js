@@ -138,7 +138,7 @@ export class TemplateEdit extends Component {
     const { name, path, raw_content, http_url, has_front_matter, front_matter } = template;
     const [directory, ...rest] = params.splat;
     const ext =  getExtensionFromPath(path);
-    const metafields = <Metadata ref="frontmatter" fields={{raw_content, path: path, ...front_matter}} />;
+    const metafields = <Metadata ref="frontmatter" fields={{raw_content, path, ...front_matter}} />;
 
     return (
       <DocumentTitle title={generateTitle(name, directory, 'Templates')}>

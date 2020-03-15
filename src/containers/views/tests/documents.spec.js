@@ -20,8 +20,8 @@ function setup(documents=[doc]) {
   const component = mount(<Documents {...actions} {...props} />);
 
   return {
-    component: component,
-    actions: actions,
+    component,
+    actions,
     h1: component.find('h1').last(),
     new_button: component.find('.page-buttons a').first(),
     row_title: component.find('strong a'),

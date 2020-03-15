@@ -8,14 +8,14 @@ import Button from '../../../components/Button';
 import { config, page } from './fixtures';
 
 const defaultProps = {
-  page: page,
+  page,
   errors: [],
   fieldChanged: false,
   updated: false,
   isFetching: false,
   router: {},
   route: {},
-  config: config,
+  config,
   params: { splat: [null, "page", "md"] }
 };
 

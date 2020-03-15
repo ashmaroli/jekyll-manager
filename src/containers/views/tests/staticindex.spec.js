@@ -21,8 +21,8 @@ function setup(files=[staticfile]) {
   );
 
   return {
-    component: component,
-    actions: actions,
+    component,
+    actions,
     info: component.find('.preview-info'),
     previewContainer: component.find('.preview-container')
   };

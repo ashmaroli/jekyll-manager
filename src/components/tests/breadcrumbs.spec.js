@@ -14,7 +14,7 @@ function setup(defaultProps = props) {
   const component = mount(<Breadcrumbs {...defaultProps} />);
 
   return {
-    component: component,
+    component,
     links: component.find('.breadcrumbs li'),
     base: component.find(Link).first()
   };
