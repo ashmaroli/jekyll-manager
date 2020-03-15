@@ -34,7 +34,8 @@ export const removeFieldFromMetadata = (state, namePrefix, key) => {
       return tmpState.metadata;
     }
     field.splice(key, 1);
-  } else {
+  }
+  else {
     if (!_.has(field, key)) {
       return tmpState.metadata;
     }
@@ -58,11 +59,12 @@ export const updateMetadataFieldKey = (state, namePrefix, fieldKey, newKey) => {
   let field = eval(`tmpState.${namePrefix}`);
   if (field === undefined) return tmpState.metadata;
   if (_.has(field, newKey)) return tmpState.metadata;
-  field = Object.keys(field).reduce((result, current) => {
-    if (current == fieldKey) result[newKey] = field[current];
-    else result[current] = field[current];
-    return result;
-  }, {});
+  field = Object.keys(field)
+    .reduce((result, current) => {
+      if (current == fieldKey) result[newKey] = field[current];
+      else result[current] = field[current];
+      return result;
+    }, {});
   eval(`tmpState.${namePrefix} = field`);
   return tmpState.metadata;
 };
@@ -98,7 +100,8 @@ export const convertMetadataField = (state, nameAttr, convertType) => {
   else if (convertType == 'object') {
     let key = `New field ${state.new_field_count}`;
     field = { [key]: '' };
-  } else field = '';
+  }
+  else field = '';
   eval(`tmpState.${nameAttr} = field`);
   return tmpState.metadata;
 };
@@ -130,7 +133,7 @@ export const moveMetadataArrayItem = (state, namePrefix, srcInd, targetInd) => {
  * @param {Object} front_matter
  * @return {Object} metadata
  */
-export const injectDefaultFields = (config, path, type, front_matter = {}) => {
+export const injectDefaultFields = (config, path, type, front_matter={}) => {
   let defaults;
   try {
     defaults = config.content.defaults;
@@ -140,10 +143,7 @@ export const injectDefaultFields = (config, path, type, front_matter = {}) => {
   let metafields = {};
   _.each(defaults, field => {
     const scope = field.scope;
-    if (
-      (!scope.type || scope.type == type) &&
-      (!scope.path || scope.path == path)
-    ) {
+    if ((!scope.type || scope.type == type) && (!scope.path || scope.path == path)) {
       _.extend(metafields, field.values);
     }
   });

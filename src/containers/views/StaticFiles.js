@@ -14,7 +14,6 @@ import { search } from '../../ducks/utils';
 import { existingUploadedFilenames, generateTitle } from '../../utils/helpers';
 import { filterByFilename , fetchStaticFiles, uploadStaticFiles, deleteStaticFile } from '../../ducks/staticfiles';
 import { getOverrideMessage } from '../../constants/lang';
-
 import { ADMIN_PREFIX } from '../../constants';
 
 export class StaticFiles extends Component {

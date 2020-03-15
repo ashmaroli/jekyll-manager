@@ -26,5 +26,5 @@ export default combineReducers({
   templates,
   theme,
   utils,
-  notifications,
+  notifications
 });
