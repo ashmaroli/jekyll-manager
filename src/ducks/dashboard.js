@@ -21,7 +21,7 @@ export const fetchMeta = () => dispatch => {
 export default function dashboard(
   state = {
     meta: {},
-    isFetching: true,
+    isFetching: false,
   },
   action
 ) {
@@ -31,7 +31,7 @@ export default function dashboard(
     case FETCH_META_SUCCESS:
       return { ...state, meta: action.meta, isFetching: false };
     case FETCH_META_FAILURE:
-      return { ...state, isFetching: true };
+      return { ...state, meta: {}, isFetching: false };
     default:
       return state;
   }

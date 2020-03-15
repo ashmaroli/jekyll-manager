@@ -141,11 +141,3 @@ export default function pages(
       return { ...state, updated: false };
   }
 }
-
-// Selectors
-export const filterBySearchInput = (list, input) => {
-  if (input) {
-    return list.filter(p => p.name.toLowerCase().includes(input.toLowerCase()));
-  }
-  return list;
-};

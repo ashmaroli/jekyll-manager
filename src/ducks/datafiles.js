@@ -167,5 +167,5 @@ export const filterByFilename = (list, input) => {
   if (input) {
     return list.filter(f => f.path.toLowerCase().includes(input.toLowerCase()));
   }
-  return datafiles;
+  return list;
 };

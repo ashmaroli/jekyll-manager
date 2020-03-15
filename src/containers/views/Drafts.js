@@ -9,8 +9,8 @@ import DocumentTitle from 'react-document-title';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Button from '../../components/Button';
 import InputSearch from '../../components/form/InputSearch';
-import { fetchDrafts, deleteDraft , filterBySearchInput } from '../../ducks/drafts';
-import { search } from '../../ducks/utils';
+import { fetchDrafts, deleteDraft } from '../../ducks/drafts';
+import { search, filterBySearchInput } from '../../ducks/utils';
 import { generateTitle } from '../../utils/helpers';
 
 import { getDeleteMessage, getNotFoundMessage } from '../../constants/lang';

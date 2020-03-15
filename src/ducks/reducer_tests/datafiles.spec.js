@@ -131,4 +131,9 @@ describe('Reducers::DataFiles', () => {
       updated: false,
     });
   });
+
+  it('should filter files and directories by input', () => {
+    expect(datafilesDuck.filterByFilename(data_files, '').length).toBe(2);
+    expect(datafilesDuck.filterByFilename(data_files, '.yml').length).toBe(1);
+  });
 });

@@ -143,7 +143,7 @@ export default function templates(
         template: {},
       };
     case FETCH_TEMPLATES_FAILURE:
-      return { ...state, isFetching: false, template: {} };
+      return { ...state, isFetching: false, templates: [] };
     case FETCH_TEMPLATE_SUCCESS:
       return { ...state, template: action.template, isFetching: false };
     case FETCH_TEMPLATE_FAILURE:
@@ -154,11 +154,3 @@ export default function templates(
       return { ...state, updated: false };
   }
 }
-
-// Selectors
-export const filterBySearchInput = (list, input) => {
-  if (input) {
-    return list.filter(p => p.name.toLowerCase().includes(input.toLowerCase()));
-  }
-  return list;
-};

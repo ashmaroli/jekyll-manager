@@ -86,6 +86,42 @@ describe('Reducers::Collections', () => {
     });
   });
 
+  it('should handle fetchDocument(id)', () => {
+    expect(
+      reducer(
+        {},
+        {
+          type: collectionsDuck.FETCH_DOCUMENT_REQUEST,
+        }
+      )
+    ).toEqual({
+      isFetching: true,
+    });
+    expect(
+      reducer(
+        {},
+        {
+          type: collectionsDuck.FETCH_DOCUMENT_SUCCESS,
+          doc,
+        }
+      )
+    ).toEqual({
+      currentDocument: doc,
+      isFetching: false,
+    });
+    expect(
+      reducer(
+        {},
+        {
+          type: collectionsDuck.FETCH_DOCUMENT_FAILURE,
+        }
+      )
+    ).toEqual({
+      currentDocument: {},
+      isFetching: false,
+    });
+  });
+
   it('should handle putDocument', () => {
     expect(
       reducer(
@@ -102,5 +138,15 @@ describe('Reducers::Collections', () => {
     expect(reducer({ updated: true }, {})).toEqual({
       updated: false,
     });
+  });
+
+  it('should filter documents and directories', () => {
+    expect(
+      collectionsDuck.filterBySearchInput(collection_entries, '').length
+    ).toBe(2);
+    expect(
+      collectionsDuck.filterBySearchInput(collection_entries, 'dir').length
+    ).toBe(1);
+    expect(collectionsDuck.filterBySearchInput(null, 'dir').length).toBe(0);
   });
 });
