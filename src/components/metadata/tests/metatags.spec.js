@@ -27,7 +27,7 @@ function setup(props = defaultProps) {
 
 describe('Components::MetaTags', () => {
   it('should render an editable', () => {
-    const { component, editable } = setup();
+    const { editable } = setup();
     expect(editable.node).toBeTruthy();
   });
 
@@ -95,7 +95,7 @@ describe('Components::MetaTags', () => {
   });
 
   it('should render a dropdown list of all tags in site payload', () => {
-    const { component, editable } = setup(Object.assign({}, defaultProps, {
+    const { component } = setup(Object.assign({}, defaultProps, {
       suggestions: ['foo', 'bar', 'baz']
     }));
     component.setState({ autoSuggest: true });
@@ -104,7 +104,7 @@ describe('Components::MetaTags', () => {
   });
 
   it('should render a dropdown list of tags not already used in current document', () => {
-    const { component, editable } = setup(Object.assign({}, defaultProps, {
+    const { component } = setup(Object.assign({}, defaultProps, {
       fieldValue: ['foo'],
       suggestions: ['foo', 'bar', 'baz']
     }));
@@ -114,7 +114,7 @@ describe('Components::MetaTags', () => {
   });
 
   it('should create a tag from the dropdown list of suggested tags', () => {
-    const { component, editable } = setup(Object.assign({}, defaultProps, {
+    const { component } = setup(Object.assign({}, defaultProps, {
       fieldValue: ['foo'],
       suggestions: ['foo', 'bar', 'baz']
     }));

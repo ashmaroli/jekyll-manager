@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory, withRouter } from 'react-router';
 import { HotKeys } from 'react-hotkeys';
-import _ from 'underscore';
-import classnames from 'classnames';
 import DocumentTitle from 'react-document-title';
 
 import Toggled from '../../components/Toggled';
@@ -15,10 +12,9 @@ import Errors from '../../components/Errors';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import Button from '../../components/Button';
 import InputPath from '../../components/form/InputPath';
-import InputTitle from '../../components/form/InputTitle';
 import Editor from '../../components/Editor';
 import Metadata from '../../containers/MetaFields';
-import { updateTitle, updateBody, updatePath, updateTemplate } from '../../ducks/metadata';
+import { updateTitle, updateBody, updatePath } from '../../ducks/metadata';
 import { putTemplate } from '../../ducks/templates';
 import { clearErrors } from '../../ducks/utils';
 import { getLeaveMessage } from '../../constants/lang';
@@ -88,7 +84,6 @@ export class TemplateNew extends Component {
     preventDefault(e);
 
     if (fieldChanged) {
-      const content = this.refs.editor.getValue();
       const include_front_matter = this.state.hasFrontMatter;
       putTemplate('create', params.splat, null, include_front_matter);
     }
@@ -96,7 +91,7 @@ export class TemplateNew extends Component {
 
   render() {
     const {
-      errors, updated, updateTitle, updateBody, updatePath, fieldChanged, params
+      errors, updated, updatePath, fieldChanged, params
     } = this.props;
 
     const keyboardHandlers = {

@@ -1,5 +1,5 @@
 import * as dashboardDuck from '../dashboard';
-import { meta, page_entries } from './fixtures';
+import { meta } from './fixtures';
 
 const reducer = dashboardDuck.default;
 

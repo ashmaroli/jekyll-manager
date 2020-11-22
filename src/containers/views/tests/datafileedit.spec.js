@@ -64,13 +64,13 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should not call clearErrors on unmount if there are no errors.', () => {
-    const { component, errors, actions } = setup();
+    const { component, actions } = setup();
     component.unmount();
     expect(actions.clearErrors).not.toHaveBeenCalled();
   });
 
   it('should clear errors on unmount.', () => {
-    const { component, errors, actions } = setup(Object.assign({}, defaultProps, {
+    const { component, actions } = setup(Object.assign({}, defaultProps, {
       errors: ['The content is required!']
     }));
     component.unmount();
@@ -85,7 +85,7 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should update state on switch to GUI mode', () => {
-    const { component, toggleButton, actions } = setup();
+    const { component, toggleButton } = setup();
     expect(component.state()).toEqual({
       'guiPath': '',
       'extn': '',
@@ -100,7 +100,7 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should call putDataFile after datafileChanged in GUI mode', () => {
-    const { component, toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
+    const { toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
       datafileChanged: true
     }));
     toggleButton.simulate('click');
@@ -111,7 +111,7 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should call putDataFile with different splats and datafileChanged in GUI mode', () => {
-    const { component, toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
+    const { toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
       params: { splat: ['', 'authors', 'yml']},
       datafileChanged: true
     }));
@@ -123,7 +123,7 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should call putDataFile after fieldChanged in GUI mode', () => {
-    const { component, toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
+    const { toggleButton, saveButton, actions } = setup(Object.assign({}, defaultProps, {
       datafile,
       params: { splat: ['books', 'authors', 'yml']},
       fieldChanged: true
@@ -142,7 +142,7 @@ describe('Containers::DataFileEdit', () => {
   });
 
   it('should recieve updated props', () => {
-    const { component, actions } = setup();
+    const { component } = setup();
     component.setProps({
       params: { splat: ['books', 'authors', 'yml']},
       updated: true

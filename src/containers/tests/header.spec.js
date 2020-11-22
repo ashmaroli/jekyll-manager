@@ -38,7 +38,7 @@ describe('Containers::Header', () => {
 
   it('should render placeholder title', () => {
     const props = { ...defaultProps, config: {} };
-    const { component, title } = setup(props);
+    const { title } = setup(props);
     expect(title.text()).toEqual('You have no title!');
 
     const tree = renderer.create(<Header {...props} />).toJSON();

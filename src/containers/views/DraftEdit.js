@@ -121,7 +121,7 @@ export class DraftEdit extends Component {
 
   render() {
     const { isFetching, draft, errors, updateTitle, updateBody, updatePath,
-      updated, fieldChanged, params, published } = this.props;
+      updated, fieldChanged, params } = this.props;
 
     if (isFetching) {
       return null;
@@ -133,8 +133,8 @@ export class DraftEdit extends Component {
       'save': this.handleClickSave,
     };
 
-    const { name, relative_path, raw_content, collection, http_url, front_matter } = draft;
-    const [directory, ...rest] = params.splat;
+    const { name, relative_path, raw_content, http_url, front_matter } = draft;
+    const directory = params.splat[0];
 
     const layout = front_matter.layout || '';
     const title = front_matter.title || '';

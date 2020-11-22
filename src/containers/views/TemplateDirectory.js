@@ -12,7 +12,7 @@ import InputSearch from '../../components/form/InputSearch';
 import { fetchTemplates, deleteTemplate } from '../../ducks/templates';
 import { search, filterBySearchInput } from '../../ducks/utils';
 import { generateTitle } from '../../utils/helpers';
-import { getLeaveMessage, getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
+import { getDeleteMessage, getNotFoundMessage } from '../../constants/lang';
 import { ADMIN_PREFIX } from '../../constants';
 
 export class TemplateDirectory extends Component {
@@ -54,7 +54,7 @@ export class TemplateDirectory extends Component {
   }
 
   renderFileRow(file, splat) {
-    const { name, path, api_url, http_url, title } = file;
+    const { name, path, http_url } = file;
     const to = http_url ? http_url : `${ADMIN_PREFIX}/templates/${splat}/${path}`;
     const target = http_url ? "_blank" : null;
     return (
@@ -82,7 +82,7 @@ export class TemplateDirectory extends Component {
   }
 
   renderDirectoryRow(directory) {
-    const { name, path, api_url } = directory;
+    const { name, path } = directory;
     const to = `${ADMIN_PREFIX}/templates/${path}`;
     return (
       <tr key={name}>

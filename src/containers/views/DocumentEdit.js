@@ -108,7 +108,7 @@ export class DocumentEdit extends Component {
   render() {
     const {
       isFetching, currentDocument, errors, updateTitle, updateBody, updatePath, updated,
-      fieldChanged, params, config
+      fieldChanged, params
     } = this.props;
 
     if (isFetching) {
@@ -120,7 +120,7 @@ export class DocumentEdit extends Component {
     }
 
     const {
-      title, raw_content, http_url, collection, front_matter, name
+      title, raw_content, http_url, collection, front_matter,
     } = currentDocument;
     const [directory, ...rest] = params.splat;
     const filename = rest.join('.');
@@ -224,7 +224,6 @@ DocumentEdit.propTypes = {
   params: PropTypes.object.isRequired,
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
-  config: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
 
@@ -234,7 +233,6 @@ const mapStateToProps = (state) => ({
   fieldChanged: state.metadata.fieldChanged,
   updated: state.collections.updated,
   errors: state.utils.errors,
-  config: state.config.config,
   new_field_count: state.metadata.new_field_count
 });
 

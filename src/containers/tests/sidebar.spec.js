@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import _ from 'underscore';
 import { mount } from 'enzyme';
-import { Link } from 'react-router';
 import { Sidebar } from '../Sidebar';
 
 import { config, site, blank_site } from './fixtures';
@@ -63,7 +62,7 @@ describe('Containers::Sidebar', () => {
 
   it('should render fine for a "blank" Jekyll site', () => {
     const minimal_config = { gems: ['jekyll-admin'] };
-    const { component, links } = setup({
+    const { links } = setup({
       site: blank_site,
       config: minimal_config
     });

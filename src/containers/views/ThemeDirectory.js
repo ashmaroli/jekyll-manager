@@ -9,7 +9,6 @@ import DocumentTitle from 'react-document-title';
 import { fetchTheme } from '../../ducks/theme';
 import { generateTitle } from '../../utils/helpers';
 import Breadcrumbs from '../../components/Breadcrumbs';
-import Button from '../../components/Button';
 import { ADMIN_PREFIX } from '../../constants';
 
 export class ThemeDirectory extends Component {
@@ -33,7 +32,7 @@ export class ThemeDirectory extends Component {
   }
 
   renderFileRow(splat, file) {
-    const { name, extname, api_url, http_url } = file;
+    const { name, extname, http_url } = file;
     const to = `${ADMIN_PREFIX}/theme/${splat}/${name}`;
     const image = /png|jpg|jpeg|gif|svg|ico/i.test(extname.substring(1));
 
@@ -75,7 +74,7 @@ export class ThemeDirectory extends Component {
   }
 
   renderDirectoryRow(directory) {
-    const { name, path, entries, api_url } = directory;
+    const { name, path } = directory;
     const to = `${ADMIN_PREFIX}/theme/${path}`;
     return (
       <tr key={name}>

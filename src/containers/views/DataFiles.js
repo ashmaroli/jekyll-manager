@@ -60,7 +60,7 @@ export class DataFiles extends Component {
   }
 
   renderFileRow(file) {
-    const { relative_path, api_url, http_url, title, slug, ext } = file;
+    const { relative_path, slug, ext } = file;
     const filename = slug + ext;
     const to = `${ADMIN_PREFIX}/datafiles/${relative_path}`;
     return (
@@ -88,7 +88,7 @@ export class DataFiles extends Component {
   }
 
   renderDirectoryRow(directory) {
-    const { name, path, api_url } = directory;
+    const { name, path } = directory;
     const to = `${ADMIN_PREFIX}/datafiles/${path}`;
     return (
       <tr key={name}>

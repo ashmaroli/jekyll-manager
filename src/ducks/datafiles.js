@@ -1,9 +1,7 @@
-import _ from 'underscore';
 import { CLEAR_ERRORS, validationError } from './utils';
 import { get, put } from '../utils/fetch';
 import {
   toYAML,
-  toJSON,
   getExtensionFromPath,
   trimObject,
 } from '../utils/helpers';

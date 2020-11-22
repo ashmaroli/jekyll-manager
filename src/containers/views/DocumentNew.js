@@ -82,15 +82,13 @@ export class DocumentNew extends Component {
 
   render() {
     const { errors, updated, updateTitle, updateBody, updatePath, fieldChanged,
-      params, config } = this.props;
+      params } = this.props;
 
     const keyboardHandlers = {
       'save': this.handleClickSave,
     };
 
     const collection = params.collection_name;
-    const link = `${ADMIN_PREFIX}/collections/${collection}`;
-
     const docTitle = generateTitle('New Document', params.splat, capitalize(collection));
 
     return (
@@ -153,7 +151,6 @@ DocumentNew.propTypes = {
   params: PropTypes.object.isRequired,
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
-  config: PropTypes.object.isRequired,
   currentDocument: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
@@ -163,7 +160,6 @@ const mapStateToProps = (state) => ({
   fieldChanged: state.metadata.fieldChanged,
   errors: state.utils.errors,
   updated: state.collections.updated,
-  config: state.config.config,
   new_field_count: state.metadata.new_field_count
 });
 

@@ -55,7 +55,7 @@ export class Drafts extends Component {
   }
 
   renderFileRow(file) {
-    const { name, path, relative_path, http_url } = file;
+    const { name, relative_path, http_url } = file;
     const to = `${ADMIN_PREFIX}/drafts/${relative_path}`;
     return (
       <tr key={name}>

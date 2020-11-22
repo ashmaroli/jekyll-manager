@@ -78,19 +78,6 @@ export class StaticFiles extends Component {
       })
     );
 
-    const dir_table = (
-      <div className="content-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Sub Directories</th>
-            </tr>
-          </thead>
-          <tbody>{dir_rows}</tbody>
-        </table>
-      </div>
-    );
-
     return (
       <DocumentTitle title={generateTitle(params.splat, 'Static Files')}>
         <div>

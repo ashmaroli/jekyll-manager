@@ -8,7 +8,6 @@ import DocumentTitle from 'react-document-title';
 
 import { fetchTheme } from '../../ducks/theme';
 import { generateTitle } from '../../utils/helpers';
-import Button from '../../components/Button';
 import Collapsible from '../../components/Collapsible';
 import { ADMIN_PREFIX } from '../../constants';
 
@@ -27,7 +26,7 @@ export class ThemeManifest extends Component {
   }
 
   renderDirectoryRow(directory) {
-    const { name, path, api_url } = directory;
+    const { name, path } = directory;
     const to = `${ADMIN_PREFIX}/theme/${path}`;
     return (
       <tr key={name}>

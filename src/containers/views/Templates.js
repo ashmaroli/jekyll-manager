@@ -7,7 +7,6 @@ import _ from 'underscore';
 import DocumentTitle from 'react-document-title';
 
 import Breadcrumbs from '../../components/Breadcrumbs';
-import Button from '../../components/Button';
 import { fetchTemplates } from '../../ducks/templates';
 import { generateTitle } from '../../utils/helpers';
 import { ADMIN_PREFIX } from '../../constants';
@@ -35,7 +34,7 @@ export class Templates extends Component {
   }
 
   renderDirectoryRow(directory) {
-    const { name, path, api_url } = directory;
+    const { name, path } = directory;
     const to = `${ADMIN_PREFIX}/templates/${path}`;
     return (
       <tr key={name}>

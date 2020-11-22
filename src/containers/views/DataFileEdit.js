@@ -74,7 +74,7 @@ export class DataFileEdit extends Component {
 
   toggleView() {
     const { datafile, params } = this.props;
-    const [directory, ...rest] = params.splat;
+    const directory = params.splat[0];
     const path = directory ? `${directory}/${datafile.slug}` : datafile.slug;
     this.setState({
       guiView: !this.state.guiView,
@@ -130,7 +130,7 @@ export class DataFileEdit extends Component {
     const confirm = window.confirm(getDeleteMessage(path));
 
     if (confirm) {
-      const [directory, ...rest] = params.splat || [''];
+      const directory = params.splat[0];
       const filename = getFilenameFromPath(path);
       deleteDataFile(directory, filename);
       const dir = directory ? `/${directory}` : '';
@@ -139,8 +139,6 @@ export class DataFileEdit extends Component {
   }
 
   renderGUInputs() {
-    const { datafile, params } = this.props;
-    const [directory] = params.splat;
     return(
       <form className="datafile-path">
         <fieldset className="filename">
@@ -222,7 +220,7 @@ export class DataFileEdit extends Component {
     }
 
     const { relative_path, path, raw_content, content } = datafile;
-    const [directory, ...rest] = params.splat || [''];
+    const directory = params.splat[0];
     const filename = getFilenameFromPath(path);
     const ext = getExtensionFromPath(path);
 

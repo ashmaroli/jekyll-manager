@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { browserHistory, Link } from 'react-router';
-import _ from 'underscore';
+import { browserHistory } from 'react-router';
 import DocumentTitle from 'react-document-title';
 
 import Button from '../../components/Button';
@@ -58,17 +57,17 @@ export class TemplateView extends Component {
   }
 
   render() {
-    const { isFetching, template, params, updated } = this.props;
+    const { isFetching, template, params } = this.props;
 
     if (isFetching) {
       return null;
     }
 
-    const { name, path, relative_path, data, raw_content, http_url, exist_at_source } = template;
+    const { name, path, relative_path, raw_content, exist_at_source } = template;
     const checked = exist_at_source && this.state.checkboxState;
     const edit_url = `${ADMIN_PREFIX}/templates/${relative_path}`;
     const force_copy = exist_at_source ? checked : true;
-    const [directory, ...rest] = params.splat;
+    const directory = params.splat[0];
     const ext = getExtensionFromPath(path);
 
     return (

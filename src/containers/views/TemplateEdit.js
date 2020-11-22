@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory, withRouter } from 'react-router';
 import { HotKeys } from 'react-hotkeys';
 import _ from 'underscore';
-import classnames from 'classnames';
 import DocumentTitle from 'react-document-title';
 
 import Toggled from '../../components/Toggled';
@@ -15,7 +13,6 @@ import Splitter from '../../components/Splitter';
 import Errors from '../../components/Errors';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import InputPath from '../../components/form/InputPath';
-import InputTitle from '../../components/form/InputTitle';
 import Editor from '../../components/Editor';
 import Metadata from '../MetaFields';
 import { fetchTemplate, deleteTemplate, putTemplate } from '../../ducks/templates';
@@ -103,7 +100,6 @@ export class TemplateEdit extends Component {
     if (fieldChanged) {
       const [directory, ...rest] = params.splat;
       const filename = rest.join('.');
-      const content = this.refs.editor.getValue();
       putTemplate('edit', directory, filename, include_front_matter);
     }
   }
@@ -120,8 +116,8 @@ export class TemplateEdit extends Component {
   }
 
   render() {
-    const { isFetching, template, errors, updateTitle, updateBody, updatePath,
-      updated, fieldChanged, params } = this.props;
+    const { isFetching, template, errors, updatePath, updated, fieldChanged,
+      params } = this.props;
 
     if (isFetching) {
       return null;
@@ -136,7 +132,7 @@ export class TemplateEdit extends Component {
     };
 
     const { name, path, raw_content, http_url, has_front_matter, front_matter } = template;
-    const [directory, ...rest] = params.splat;
+    const directory = params.splat[0];
     const ext =  getExtensionFromPath(path);
     const metafields = <Metadata ref="frontmatter" fields={{raw_content, path, ...front_matter}} />;
 

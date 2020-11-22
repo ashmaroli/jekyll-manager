@@ -1,5 +1,5 @@
 import * as draftsDuck from '../drafts';
-import { draft, draft_entries } from './fixtures';
+import { draft } from './fixtures';
 
 const reducer = draftsDuck.default;
 

@@ -77,7 +77,7 @@ export class PageNew extends Component {
 
   render() {
     const {
-      errors, updated, updateTitle, updateBody, updatePath, fieldChanged, params, config
+      errors, updated, updateTitle, updateBody, updatePath, fieldChanged, params,
     } = this.props;
 
     const keyboardHandlers = {
@@ -144,7 +144,6 @@ PageNew.propTypes = {
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
   params: PropTypes.object.isRequired,
-  config: PropTypes.object.isRequired,
   page: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
@@ -154,7 +153,6 @@ const mapStateToProps = (state) => ({
   fieldChanged: state.metadata.fieldChanged,
   errors: state.utils.errors,
   updated: state.pages.updated,
-  config: state.config.config,
   new_field_count: state.metadata.new_field_count
 });
 

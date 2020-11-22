@@ -14,7 +14,7 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import InputPath from '../../components/form/InputPath';
 import { putDataFile, onDataFileChanged } from '../../ducks/datafiles';
 import { clearErrors } from '../../ducks/utils';
-import { preventDefault, getFilenameFromPath, generateTitle } from '../../utils/helpers';
+import { preventDefault, generateTitle } from '../../utils/helpers';
 import { getLeaveMessage } from '../../constants/lang';
 import { ADMIN_PREFIX } from '../../constants';
 
@@ -117,9 +117,8 @@ export class DataFileNew extends Component {
 
   render() {
     const {
-      datafileChanged, fieldChanged, onDataFileChanged, datafile, updated, errors, params
+      datafileChanged, fieldChanged, onDataFileChanged, updated, errors, params
     } = this.props;
-    const { path, raw_content } = datafile;
 
     const keyboardHandlers = {
       'save': this.handleClickSave,

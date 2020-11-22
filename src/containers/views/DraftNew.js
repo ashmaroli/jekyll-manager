@@ -77,7 +77,7 @@ export class DraftNew extends Component {
 
   render() {
     const {
-      errors, updated, updateTitle, updateBody, updatePath, fieldChanged, params, config
+      errors, updated, updateTitle, updateBody, updatePath, fieldChanged, params,
     } = this.props;
 
     const keyboardHandlers = {
@@ -143,7 +143,6 @@ DraftNew.propTypes = {
   router: PropTypes.object.isRequired,
   route: PropTypes.object.isRequired,
   params: PropTypes.object.isRequired,
-  config: PropTypes.object.isRequired,
   draft: PropTypes.object.isRequired,
   new_field_count: PropTypes.number
 };
@@ -153,7 +152,6 @@ const mapStateToProps = (state) => ({
   fieldChanged: state.metadata.fieldChanged,
   errors: state.utils.errors,
   updated: state.drafts.updated,
-  config: state.config.config,
   new_field_count: state.metadata.new_field_count
 });
 
