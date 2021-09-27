@@ -27,14 +27,14 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.3.0"
 
   spec.add_dependency "jekyll", ">= 3.7", "< 5.0"
-  spec.add_dependency "oj", "~> 3.3", ">= 3.3.2"
+  spec.add_dependency "oj", "~> 3.12"
   spec.add_dependency "sinatra", "~> 1.4"
   spec.add_dependency "sinatra-contrib", "~> 1.4"
 
   spec.add_development_dependency "bundler", ">= 1.7"
   spec.add_development_dependency "gem-release", "~> 0.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", ">= 12.0"
   spec.add_development_dependency "rspec", "~> 3.4"
-  spec.add_development_dependency "rubocop-jekyll", "~> 0.10.0"
+  spec.add_development_dependency "rubocop-jekyll", "~> 0.12.0"
   spec.add_development_dependency "sinatra-cross_origin", "~> 0.3"
 end
