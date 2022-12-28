@@ -1,0 +1,54 @@
+name: Continuous Integration
+
+on:
+  push:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ruby:
+    name: "Jekyll ${{ matrix.jekyll_version }} (Ruby ${{ matrix.ruby_version }})"
+    runs-on: "ubuntu-latest"
+    env:
+      JEKYLL_VERSION: ${{ matrix.jekyll_version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby_version: ["2.7", "3.1.2"]
+        jekyll_version:
+          - "~> 4.2"
+          - "~> 3.9"
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: "Set up Ruby ${{ matrix.ruby_version }}"
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_version }}
+          bundler-cache: true
+      - name: Execute tests
+        run:  bundle exec rspec --format documentation --force-color --backtrace
+        env:
+          RACK_ENV: test
+          JEKYLL_LOG_LEVEL: warn
+
+  node:
+    name: "Node ${{ matrix.node }}"
+    runs-on: "ubuntu-latest"
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["12"]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+          cache: yarn
+      - name: Install dependencies
+        run:  yarn install
+      - name: Execute tests
+        run:  bash script/build
