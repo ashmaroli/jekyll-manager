@@ -27,7 +27,7 @@ describe "custom integration" do
     sleep 3
   end
 
-  after { Open3.capture2e(*stop_command) }
+  after { Open3.capture2e(*stop_command) } unless ENV["GITHUB_ACTION"]
 
   context "Jekyll site" do
     let(:path) { "/" }
