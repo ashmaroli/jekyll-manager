@@ -57,7 +57,9 @@ describe "theme" do
       get "/theme/_layouts"
       expect(last_response).to be_ok
       expect(last_response_parsed["name"]).to eq("_layouts")
-      expect(last_response_parsed["entries"].first).to eq(expected)
+      expect(
+        last_response_parsed["entries"].find { |layout| layout["name"] == "default.html" }
+      ).to eq(expected)
     end
 
     it "returns subdirectories" do
@@ -69,7 +71,9 @@ describe "theme" do
       }
       get "/theme/assets/images"
       expect(last_response).to be_ok
-      expect(last_response_parsed["entries"].first).to eq(expected)
+      expect(
+        last_response_parsed["entries"].find { |img| img["name"] == "icon-dark.png" }
+      ).to eq(expected)
     end
   end
 
