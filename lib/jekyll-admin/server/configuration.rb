@@ -37,7 +37,7 @@ module JekyllAdmin
       def raw_configuration
         File.read(
           configuration_path,
-          Jekyll::Utils.merged_file_read_opts(site, {})
+          **Jekyll::Utils.merged_file_read_opts(site, {})
         )
       end
 

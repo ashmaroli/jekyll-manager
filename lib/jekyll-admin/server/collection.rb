@@ -76,7 +76,7 @@ module JekyllAdmin
           :splat        => params["splat"].first,
         }
         # get the directories inside the requested directory
-        directory = JekyllAdmin::Directory.new(directory_path, args)
+        directory = JekyllAdmin::Directory.new(directory_path, **args)
         directories = directory.directories
         # merge directories with the documents at the same level
         directories.concat(directory_docs.sort_by(&:date).reverse)

@@ -70,7 +70,7 @@ module JekyllAdmin
           :content_type => "templates",
           :splat        => splats.first,
         }
-        Directory.new(directory_path, args).directories
+        Directory.new(directory_path, **args).directories
       end
 
       def template_directories
@@ -173,7 +173,7 @@ module JekyllAdmin
 
       def file_contents(file = requested_file)
         @file_contents ||= File.read(
-          file, Jekyll::Utils.merged_file_read_opts(site, {})
+          file, **Jekyll::Utils.merged_file_read_opts(site, {})
         )
       end
 
