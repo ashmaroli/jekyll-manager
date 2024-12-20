@@ -13,5 +13,10 @@ gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
 
+gem "rack-test"
+gem "rspec"
+gem "rubocop-jekyll", "~> 0.14"
+gem "sinatra-cross_origin", "~> 0.3"
+
 # theme
 gem "test-theme", :path => "spec/fixtures/test-theme"
