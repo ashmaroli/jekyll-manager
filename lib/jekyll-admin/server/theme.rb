@@ -85,7 +85,7 @@ module JekyllAdmin
           :content_type => "theme",
           :splat        => splats.first,
         }
-        Directory.new(directory_path, args).directories
+        Directory.new(directory_path, **args).directories
       end
 
       def subdir_entries
@@ -130,7 +130,7 @@ module JekyllAdmin
       end
 
       def raw_content
-        File.read(file_path, Jekyll::Utils.merged_file_read_opts(site, {}))
+        File.read(file_path, **Jekyll::Utils.merged_file_read_opts(site, {}))
       end
     end
   end
