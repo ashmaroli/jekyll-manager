@@ -16,8 +16,11 @@ module Jekyll
         end
 
         def jekyll_admin_monkey_patch(server)
-          server.mount "/admin", Rack::Handler::WEBrick, JekyllAdmin::StaticServer
-          server.mount "/_api",  Rack::Handler::WEBrick, JekyllAdmin::Server
+          require "rackup"
+
+          server.mount "/admin", Rackup::Handler::WEBrick, JekyllAdmin::StaticServer
+          server.mount "/_api",  Rackup::Handler::WEBrick, JekyllAdmin::Server
+
           Jekyll.logger.warn "Auto-regeneration:", "disabled by Jekyll Manager."
           Jekyll.logger.warn "", "The site will regenerate only via the Admin interface."
           Jekyll.logger.info "Jekyll Manager mode:", ENV["RACK_ENV"] || "production"
