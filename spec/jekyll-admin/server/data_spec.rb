@@ -31,7 +31,7 @@ describe "data" do
   it "gets the index" do
     get "/data"
     expect(last_response).to be_ok
-    expect(last_response_parsed[2]).to eql(base_response)
+    expect(last_response_parsed.find { |file| file["slug"] == "data_file" }).to eql(base_response)
   end
 
   it "gets an individual data file" do
